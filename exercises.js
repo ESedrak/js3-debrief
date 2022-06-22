@@ -30,3 +30,21 @@ school.displayInfo();
 // b) add a method called displayInfo that console.logs the properties
 // c) Using this class, create a new instance (object) with the values of the object we made above
 // d) call this Instance's (this new object created from the template) displayInfo();
+
+class CreateSchool {
+  constructor(name, location, established) {
+    this.name = name;
+    this.location = location;
+    this.established = established;
+  }
+
+  displayInfo() {
+    console.log(
+      `My school ${this.name} was established in ${this.established} at ${this.location}`
+    );
+  }
+}
+
+let createSchool = new CreateSchool("Generation", "Australia", 2021);
+
+createSchool.displayInfo();
