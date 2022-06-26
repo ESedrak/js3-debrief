@@ -8,7 +8,9 @@ class BookManager {
     this._books = [];
     // 2. initialize a currentId set to currentId
     this._currentId = currentId;
+    console.log(currentId);
   }
+  // console.log(BookManager.currentId)
 
   // 3. a getter function should return the value of our books array
   get books() {
@@ -20,11 +22,13 @@ class BookManager {
   // it should take in a name, genre and author and by default have an empty string
   addBook(name = " ", genre = " ", author = " ") {
     let newBook = {
-      id: this._currrentID,
+      id: this._currentId,
       name: name,
       genre: genre,
       author: author,
     };
+    console.log(this._currentId);
+
     this._currentId++;
     this.books.push(newBook);
   }
@@ -46,6 +50,7 @@ bookList.addBook("Time to Play", "Children's Book", "Bluey");
 // 7. add two books with the following properties to our instance
 // "The Alchemist", "Life", "Paulo Coelho"
 // "Time to Play", "Children's Book", "Bluey"
+bookList.addBook();
 
 // 8. console log our books array to check that the new books were added
 console.log(bookList.books);
